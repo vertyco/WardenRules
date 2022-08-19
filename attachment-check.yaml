@@ -1,4 +1,4 @@
-name: medialink-check
+name: attachment-check
 rank: 2
 priority: 1
 event: [on-message, on-message-edit]

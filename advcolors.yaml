@@ -1,5 +1,5 @@
 rank: 2
-name: nocolors
+name: advcolors
 event: [periodic, manual]
 run-every: 2 hours
 if:

@@ -1,5 +1,5 @@
 rank: 2
-name: dehoister-2
+name: dehoist-2
 run-every: 15 minutes
 event: periodic
 if:

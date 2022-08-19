@@ -1,6 +1,6 @@
 rank: 2
 priority: 1
-name: invites
+name: no-invites
 event: [on-message, on-message-edit]
 if:
   - message-contains-invite: true

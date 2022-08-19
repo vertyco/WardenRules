@@ -1,5 +1,5 @@
 rank: 2
-name: nickname-filter
+name: racist-names
 priority: 1
 event: on-message
 if:
