@@ -1,0 +1,13 @@
+name: referlink
+rank: 1
+event: on-message
+if:
+  - message-matches-any: ["refer"]
+do:
+  - send-message:
+      id: $channel_id
+      author_name: Vertyco Dedicated!
+      author_icon_url: https://i.imgur.com/qjxJ6Ux.png
+      description: "This is your referral link $user_mention. Have your friends use this link and you will get 10% of the purchase total for the person you refer!\n**[Referral Link](https://upgrade.chat/vertyco?referralCode=$user_id)**"
+      footer_text: "Make money and support the servers at the same time by referring your friends!"
+      thumbnail: https://i.imgur.com/kiJtFlp.jpg

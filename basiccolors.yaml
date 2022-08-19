@@ -1,0 +1,14 @@
+rank: 2
+name: nocolors-basic
+event: [periodic, manual]
+run-every: 1 hour
+if:
+  - user-has-any-role-in: ["Basic Color 1", "Basic Color 2", "Basic Color 3", "Basic Color 4", "Basic Color 5", "Basic Color 6", "Basic Color 7", "Basic Color 8", "Basic Color 9", "Basic Color 10"]
+  - if-not:
+    - user-has-any-role-in: ["Ark Admin", "Tier 1 Supporter", "Tier 2 Supporter", "Tier 3 Supporter", "Server Booster", "Giga", "Savage"]
+do:
+  - remove-roles-from-user: ["Basic Color 1", "Basic Color 2", "Basic Color 3", "Basic Color 4", "Basic Color 5", "Basic Color 6", "Basic Color 7", "Basic Color 8", "Basic Color 9", "Basic Color 10"]
+  - notify-staff:
+         title: "Color Removal"
+         content: "User $user_name : $user_id has had their colors removed for no longer being a supporter."
+  - send-message: [$user_id, "Your role colors have been removed since you are no longer a supporter, to get your colors back simply support the server again by boosting the server or becoming a Tier 1 supporter or higher. To get a personalized link, type donate in the server."]

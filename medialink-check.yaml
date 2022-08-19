@@ -1,0 +1,21 @@
+name: medialink-check
+rank: 2
+priority: 1
+event: [on-message, on-message-edit]
+if:
+  - if-any:
+    - message-contains-url: true
+    - message-contains-media: true
+  - if-not:
+     - user-has-any-role-in: [877012889863606323, 914311290099499028]
+     - category-matches-any: [732016517872484394]
+do:
+  - delete-user-message:
+  - send-message: [$channel_id, $user_mention Sorry, you need to be at least level 1 to send media.]
+  - delete-last-message-sent-after: 20 seconds
+  - notify-staff:
+      content: "$user_name posted a message in $channel_mention that contained media and doesnt meet the requirements.\nContent: $message\n"
+      title: "Link Content Removed"
+      add_ctx_fields: true
+      no_repeat_for: 30 seconds
+      no_repeat_key: $rule_name-$user_id

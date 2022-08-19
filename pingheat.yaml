@@ -1,0 +1,12 @@
+rank: 2
+name: pingheat
+event: on-message
+priority: 1
+if:
+  - if-any:
+    - message-contains-more-than-role-pings: 0
+    - message-contains-more-than-mentions: 1
+    - message-contains-more-than-unique-mentions: 1
+do:
+  - add-custom-heatpoint: ["pingheat-$user_id", "5 minutes"]
+  - add-custom-heatpoint: ["pingheatwarn-$user_id", "5 minutes"]

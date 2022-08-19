@@ -1,0 +1,13 @@
+name: donatelink
+rank: 1
+event: on-message
+if:
+  - message-matches-any: ["donate"]
+do:
+  - send-message:
+      id: $channel_id
+      author_name: Vertyco Dedicated!
+      author_icon_url: https://i.imgur.com/qjxJ6Ux.png
+      description: "[Click here to support the Vertyco servers](https://upgrade.chat/vertyco)"
+      footer_text: "Donations go towards server costs, developer support, and other features."
+      thumbnail: https://i.imgur.com/kiJtFlp.jpg

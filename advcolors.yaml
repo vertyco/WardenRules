@@ -1,0 +1,14 @@
+rank: 2
+name: nocolors
+event: [periodic, manual]
+run-every: 2 hours
+if:
+  - user-has-any-role-in: ["Color #1", "Color #2", "Color #3", "Color #4", "Color #5", "Color #6", "Color #7", "Color #8", "Color #9", "Color #10", "Color #11", "Color #12", "Color #13", "Color #14", "Color #15", "Color #16", "Color #17", "Color #18", "Color #19", "Color #20"]
+  - if-not:
+    - user-has-any-role-in: ["Ark Admin", "Tier 3 Supporter", "Tier 2 Supporter", "Titan", "Veteran"]
+do:
+  - remove-roles-from-user: ["Color #1", "Color #2", "Color #3", "Color #4", "Color #5", "Color #6", "Color #7", "Color #8", "Color #9", "Color #10", "Color #11", "Color #12", "Color #13", "Color #14", "Color #15", "Color #16", "Color #17", "Color #18", "Color #19", "Color #20"]
+  - notify-staff:
+         title: "Adv Color Removal"
+         content: "User $user_name - $user_id has had their colors removed for no longer being a supporter."
+  - send-message: [$user_id, "Your role colors have been removed since you are no longer a supporter, to get your colors back simply support the server again by subscribing to Tier 2 or Tier 3 of our Supporter roles. To get a personalized link, type `donate` in the server."]
