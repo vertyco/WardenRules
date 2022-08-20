@@ -10,7 +10,7 @@ if:
      - category-matches-any: [732016517872484394]
 do:
   - delete-user-message:
-  - send-message: [$channel_id, $user_mention Sorry, you need to be at least level 1 to send attachments.]
+  - send-message: [$channel_id, "$user_mention Sorry, you need to be at least level 1 to send attachments."]
   - delete-last-message-sent-after: 20 seconds
   - notify-staff:
       content: "$user_name posted a message in $channel_mention that contained [attachment]($attachment_url)\nMessage content, if any:\n```$message ```"
