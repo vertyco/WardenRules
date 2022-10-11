@@ -1,6 +1,6 @@
 name: medialink-check
 rank: 2
-priority: 1
+priority: 2
 event: [on-message, on-message-edit]
 if:
   - if-any:
